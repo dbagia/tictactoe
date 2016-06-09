@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body>
+	<div class="main-container">
+
+		<div class="game-status" id="game-status"></div>
+		<div class="game-container" id="game-container"></div>
+
+		<div class="game-actions">
+			<div class="col-xs-3 col-xs-offset-4">
+				<button class="btn btn-primary btn-lg" id="btn-restart">Restart Game</button>
+			</div>
+		</div>
+
+
+	</div>
+	
+  <div id="UserChoiceContainer" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+                <h4 class="modal-title">Choose X or O</h4>
+            </div>
+            <div class="modal-body" style="text-align:center" id="choice-container">
+                <button class="btn btn-default btn-lg" id="btn-x">X</button>&nbsp;
+                &nbsp;OR&nbsp;
+                <button class="btn btn-default btn-lg" id="btn-o">O</button>
+            </div>
+           <!--  <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+	
+
+	<template id=cell_template> 
+	  <div data-repeat-row="{{ arr }}">
+	    <div class="row" style="height:{{ ^.rowHeight }}px">       
+	      <div data-repeat-cell="{{ row }}">
+	      	<!--{{ ^.i }}.-->
+	        <div class="box" id="{{ cell }}" style="width:{{ ^.^.boxWidth }}px; height:{{ ^.^.boxHeight }}px"><div style="color:#fff; margin-top:{{ ^.^.cellTop }}px"></div>
+	        </div>
+	      </div>    
+	    </div>
+	  </div>
+	</template>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script type="text/javascript" src="modulepattern.js"></script> -->
+	<script type="text/javascript" name="stamp" src="js/stamp.js"></script>
+	<script type="text/javascript" src="js/index.js?v=3"></script>
+	<!-- <script type="text/javascript" src="minimax.js?v=1"></script> -->
+</body>
+</html>
